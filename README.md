@@ -121,7 +121,7 @@ My answer: B - putting a ferrite ring on the hi-fi system's loudspeaker output c
 
 Correct!
 
-## A.3 Electrical, electro-magnet, and radio theory - 4 questions
+## A.3 Electrical, electro-magnetism, and radio theory - 4 questions
 
 ### 10. Identify the circuit.
 
@@ -267,6 +267,274 @@ Resistors in serial divide voltage instead of current. I should have stopped at 
 
 ### 16. What component can be used to regular power supply output voltage?
 
-My answer: Electrolytic capacitor - B
+My answer: Electrolytic capacitor - B.
 
 Correct!
+
+## A.5 Transceivers - 4 questions
+
+### 17. Determine the bandwidth characteristics of SSB transmission
+
+- SSB uses about half the bandwidth of AM transmission, eliminating A.
+- For voice transmission SSB does not significantly add to or remove from the fidelity of the audio, eliminating B.
+
+My answer: SSB occupies about half the bandwidth of AM transmission - D.
+
+Correct!
+
+### 18. What does the sensitivity of a receiver refer to?
+
+My answer: Its ability to receive weak signals - C.
+
+Correct!
+
+### 19. Identify a component in SSB transmitter circuit.
+
+I don't actually recall how SSB transmitter circuit gets rid of the carrier. But in any case speech input is often fed to a modulator.
+
+My answer: balanced modulator - B.
+
+Correct!
+
+### 20. Determine bandwidth characteristics of FM transmission.
+
+Bandwidth of an FM transmission is twice its deviation. FM transmission has fixed bandwidth and it is independent from audio frequency, eliminating A and B.
+
+My answer: twice the deviation frequency - D.
+
+Correct answer: twice the sum of deviation frequency and audio frequency - B
+
+#### What went wrong?
+
+Verified on SDR: FM transmission bandwidth is *not* independent from audio frequency, the higher the audio frequency the higher the bandwidth!
+
+## A.6 Antennas and transmission lines - 4 questions
+
+### 21. The characteristic impedance of coax cable?
+
+My answer: 50 ohms - B.
+
+Correct!
+
+### 22. Which type of feed line is appropriate for when antenna feeder must pass near conductive objects?
+
+Twisted pair (is it the same thing as twisted lead?) let both wires share the same noise and it's commonly used in ethernet cables.
+
+Individual wires without shielding are susceptible to electronic interference.
+
+My answer: coaxial cable - D.
+
+Correct!
+
+### 23. Determine the characteristics of ERP for an antenna.
+
+ERP is effective radiating power.
+
+My answer: directly proportion to antenna's gain - A.
+
+Correct!
+
+### 24. What's the impedance of a shorted transmission line?
+
+Remember the "open - short - load" calibration method of NanoVNA?
+
+My answer: zero - A.
+
+Correct answer: very high - D
+
+#### What went wrong?
+
+No clue, ask folks from the radio club.
+
+TODO FIXME
+
+## A.7 RF propagation - 4 questions
+
+### 25. Determine the propagation characteristics of the 160m band.
+
+Clues:
+
+- The 160m band propagates over the ground rather than being reflected by ionosphere.
+- The 160m band is considered by some as being in the "medium wave" band.
+- The higher the frequency, the higher its likelihood of penetrating all ionosphere layers.
+  * RF signals of higher frequencies are also susceptible to being absorbed by atmospheric conditions such as rain.
+- The ionosphere layers are, from lowest to highest: D, E, F1, F2.
+
+My answer: RF signal is absorbed by the D layer - B.
+
+Correct!
+
+### 26. What is least likely to influence the distance of a single hop in HF transmission?
+
+- Frequency is definitely a factor, e.g. "band is open/closed".
+- Mode of transmission is irrelevant to RF propagation, though some modes are more efficient for certain use cases.
+- Angle of radiation is definitely a factor, e.g. near vertical incidence skywave.
+  * For NVIS, radiation angle is driven toward up direction when the antenna is placed closer to ground.
+- Height of ionosphere is definitely a factor.
+
+My answer: mode of transmission - B.
+
+Correct!
+
+### 27. Determine the propagation characteristics of the 160m band again.
+
+Note the relatively short distance between the two stations.
+
+- Ground wave is how RF signals on the 160m band usually propagate.
+- Sporadic E happens for much higher frequencies, often 6m and above.
+  * Remember how I received the APRS beacons 500km away?
+
+My answer: ground wave - A.
+
+Correct!
+
+### 28. What's the frequency above which RF penetrates instead of being reflected?
+
+My answer: MUF - B.
+
+Correct answer: critical frequency - A.
+
+#### What went wrong?
+
+Review the concepts of MUF and critical frequency:
+
+- Critical frequency is the one below which RF is reflected and above which RF penetrates through *at vertical incidence*.
+  * CritFreq = sqrt(81 x ionisation density).
+- Because the critical frequency is measured at vertical incidence, MUF is often much higher.
+  * MUF is a prediction ("usable"), first of all.
+  * As a rule of thumb, MUF = 3 x critical frequency.
+  * MUF = CritFreq / cos(angle of incidence).
+
+## A.8 Measurement - 2 questions
+
+### 29. What is the Y axis on an oscilloscope?
+
+My answer: the signal voltage - D.
+
+Correct!
+
+### 30. Calculate RMS.
+
+For AC, RMS is approximately 70% of peak voltage.
+
+My answer: 7v - C.
+
+Correct!
+
+## Short recap of my result so far
+
+Keep in mind that the pass mark of the section A is 60%.
+
+My result: 23 / 30 = 76%, pass!
+
+## B.1 Phonetic alphabet - 1 question
+
+### 31. Speak NK6GR in phonetic alphabet
+
+My answer: november kilo 6 golf romeo - A.
+
+Correct!
+
+## B.2 Q codes - 3 questions
+
+### 32. Q code of the location?
+
+My answer: QTH - D.
+
+Correct!
+
+### 33. What is QRZ?
+
+My answer: who's calling me - B.
+
+Correct!
+
+### 34. What is QSB?
+
+My answer: signal is fading - D.
+
+Correct!
+
+## Short recap of Q codes
+
+IDs:
+
+- QRA - name
+- QRB - distance
+- QTH - location
+
+Operational:
+
+- QRP - low power
+- QRV - ready
+- QRS - slow
+
+Interference:
+
+- QRZ - who's calling?
+- QRM - interference
+- QRN - static
+- QSB - fading
+
+## B.3 In case of emergency - 3 questions
+
+### 35. What's the word for distress?
+
+My answer: Mayday - C.
+
+Correct!
+
+### 36. What's the emergency communication centre of frequency on 80m band?
+
+My guess: 3.750Mhz - B.
+
+Review this later on for all HF and VHF bands.
+
+Correct answer: 3.760Mhz - D
+
+#### What went wrong?
+
+Study HF band plan: https://www.iaru-r1.org/wp-content/uploads/2021/06/hf_r1_bandplan.pdf
+
+### 37. What's the UHF simplex frequency?
+
+My answer: 433.5Mhz - C
+
+Correct answer: 433.775Mhz - D
+
+#### What went wrong?
+
+433.5Mhz is the IARU region 1 (Europe & Africa) simplex calling frequency, it is not the amateur radio emergency network's simplex frequency.
+
+## Short recap of emergency frequencies
+
+References:
+
+- HF band plan: https://www.iaru-r1.org/wp-content/uploads/2021/06/hf_r1_bandplan.pdf
+- VHF band plan: https://www.iaru-r1.org/wp-content/uploads/2020/12/VHF-Bandplan.pdf
+
+IARU regions:
+
+- Region 1: Europe and Africa.
+- Region 2: Asia and Australia.
+- Region 3: North and South America.
+
+General rule of frequency allocation from lowest to highest in each band:
+
+- CW (200 Hz)
+  * QRP centre of activity is located toward the higher frequencies.
+- Narrow-band and digital modes (500 Hz)
+  * Automatic stations are located toward the higher frequencies.
+- Beacons (no bandwidth specified)
+- All modes - digital, SSB (2700 Hz)
+- All modes - SSB (2700Hz)
+  * QRP centre of activity is located toward the middle.
+  * Emergency and SSTV frequencies are located toward the higher frequencies.
+
+HF emergency frequencies:
+
+- 3760 kHz
+- 7110 kHz
+- 14300 kHz
+- 18160 kHz
+- 21360 kHz
