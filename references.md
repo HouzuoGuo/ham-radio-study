@@ -122,9 +122,10 @@ Morse:
 
 ## Q codes
 
+- General: QRA (name), QRB (distance), QTE (bearing).
 - Bad signal: QRM (interference), QRN (static), QSB (fade).
 - Power: QRP (low), QRO (high).
-- Calls: QRZ (who's calling?), QRZ (please ack). QTH (location).
+- Calls: QRZ (who's calling?), QSL (please ack). QTH (location).
 
 ## RST - readability, strength, and tone
 
@@ -164,4 +165,114 @@ For an antenna tower:
   * Bond all rods together.
 - Fit static dischargers in antenna feeders.
 
-TODO - Section B, resonance and tuned circuits.
+## Impedance and capacitance
+
+Impedance is the combination of reactance and resistance: Z = Sqrt(R^2 + X^2)
+
+- In the absence of resistance, Z = X.
+- In the absence of reactance, Z = R.
+- Capacitance introduces a downward slope to impedance, inductance introduces an upward slope.
+
+When reactance and resistance are in parallel (instead of series): Z = (R x X) / Sqrt(R^2 + X^2)
+
+Capacitors:
+
+- Capacitance = K (dialetric constant) x A (area) / d (distance)
+- Capacitance in series: Total = 1 / (1 / C1 + 1 / C2 + ...)
+- Capacitance in parallel: Total = C1 + C2 + ...
+- Reactance: X = 1 / (2 x pi x f x C)
+
+Inductors:
+
+- Inductor in series: Total = L1 + L2 + ...
+- Inductor in parallel: Total = 1 / (1 / L1 + 1 / L2 + ...)
+- Reactance: X = 2 x pi x f x L
+  * Like inverse capacitance.
+
+Tuned circuit:
+
+- L & C in series: low impedance at resonant frequency.
+- L & C in parallel: high impedance at resonant frequency.
+- High Q: narrow bandwidth, and low Q means wide bandwidth.
+- Typical bandwidth measurement: "half-power bandwidth", which is at -3dB, when voltage drops to ~0.7 of the voltage at resonance.
+
+## Diode
+
+Conventional current flow:
+
+- Conventional current flow departs from positive (anode) and drains into negative (cathode).
+- Diode marking goes like: anode (conventional positive) - `I>|` - cathode (conventional negative)
+  * The conventional negative side is often marked with a bar.
+
+Characteristics:
+
+- Silicon diode: forward drop 0.6v, significantly reduces reverse current.
+  * Block reverse current at slow switching speed.
+- Germanium diode: forward drop 0.3v, responds to forward and reverse current with similar linearity.
+  * Symmetrical current response in both directions.
+  * Sometimes used as an AM detector.
+- Zener diode: forward drop 0.6v, rapidly responds to current demand at breakdown voltages in the reverse direction; low ripple under varying load.
+  * Useful for clamping voltage in reverse.
+  * Useful for providing stable voltage at varying load.
+- Schottky diode: forward drop 0.3v.
+  * Block reverse current at fast switching speed. Also saves power due to the lower drop.
+  
+Common configuration:
+
+- Silicone diodes in series: simple voltage divider regardless of load current.
+  * Also increases peak inverse voltage rating.
+  * Use a large parallel resister to better balance voltage.
+  * Use a tiny capacitor to protect against transient voltage.
+- Diodes in parallel: improve forward current rating.
+  * Use a tiny resister in series to balance currents.
+
+
+## Designing power supply
+
+Rectify - convert AC to DC:
+
+- Half wave: use a transformer to obtain the desired voltage, and then connect a diode in series.
+- Full wave: use a transformer to obtain the desired voltage, tap to the middle of the winding, then use two diodes in series.
+- Full wave bridge rectifier: use 4 diodes.
+
+### Further optimisation
+
+High voltage power supply:
+
+- Consider the full wave rectifier design.
+- Smooth output voltage with a small capacitor.
+- Connect a bleeder resistor across the capacitor to bleed off potentially dangerously high voltage.
+- Further smooth output voltage with an inductor.
+
+Low voltage power supply:
+
+- Consider the half wave rectifier design in combination with a zener diode.
+  * Zener diode provides comparably more stable voltage at varying load.
+- Smooth output voltage with a large capacitor.
+
+## Amplify a signal
+
+Amplifier classes:
+
+- Class A - one conductor amplifies 100% of the input signal, theoretically 50% efficient.
+- Class B - two conductors each amplifies 180 degree of the signal cycle, theoretically 78% efficient.
+- Class AB - two conductors each amplifies 180 degree of the signal cycle plus a small amount of the other half.
+
+### Components
+
+- NPM transistor: when base is switched on, conventional current flows from collector to base and emitter. Arrow shows the current direction.
+- PNP transistor: when base is switched off, conventional current flows from emitter to collector.
+- Junction field effect transistors: magnify current from source to drain (N-channel) by a small increase of gate voltage.
+- Valves (vacuum tubes): heated cathode (conventional negative) to emit electrons toward anode (conventional positive), grid voltage controls the gain.
+
+Simple audio amplifier:
+
+- Connect a single NPN diode across power supply.
+- Connect input to gate, through larger resistors.
+  * Larger compared to the resisters on the collector's side.
+- Filter emitter through a low-pass filter (capacitor + resister in parallel).
+
+Simple radio frequency amplifier:
+
+- Use a junction field effect transistor.
+  * And I barely if at all understand rest of the schematics.
