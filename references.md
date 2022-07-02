@@ -39,7 +39,7 @@ VHF and above:
 
 - 6m - 50000 KHz to 54000 KHz - 4000 KHz
 - 4m - 70000 KHz to 70500 KHz - 500 KHz
-- 2m - 144 MHz to 145 MHz - 2 MHz
+- 2m - 144 MHz to 146 MHz - 2 MHz
 - 70cm - 430 MHz to 440 MHz - 10 MHz
 
 WARC bands have a total bandwidth of 100KHz or less.
@@ -195,6 +195,12 @@ Tuned circuit:
 - L & C in parallel: high impedance at resonant frequency.
 - High Q: narrow bandwidth, and low Q means wide bandwidth.
 - Typical bandwidth measurement: "half-power bandwidth", which is at -3dB, when voltage drops to ~0.7 of the voltage at resonance.
+- Quartz crystal is similar to a tuned circuit and can be modelled as R + L + C in series plus a C in parallel.
+  * Low impedance at resonant frequency.
+  * Capacitance prevails below the resonant frequency (high impedance).
+  * Inductance prevails above the resonant frequency (high impedance) up till a certain point (parallel resonant frequency).
+  * Beyond parallel resonant frequency the impedance lowers once again.
+    - Parallel L & C prevail, which exhibits low impedance at higher frequency.
 
 ## Diode
 
@@ -226,7 +232,6 @@ Common configuration:
 - Diodes in parallel: improve forward current rating.
   * Use a tiny resister in series to balance currents.
 
-
 ## Designing power supply
 
 Rectify - convert AC to DC:
@@ -254,9 +259,32 @@ Low voltage power supply:
 
 Amplifier classes:
 
-- Class A - one conductor amplifies 100% of the input signal, theoretically 50% efficient.
-- Class B - two conductors each amplifies 180 degree of the signal cycle, theoretically 78% efficient.
-- Class AB - two conductors each amplifies 180 degree of the signal cycle plus a small amount of the other half.
+- Class A - the conductor amplifies 360 degrees (100%) of the input signal, theoretically 50% efficient.
+- Class B - each conductor amplifies 180 degrees (50%) of the input signal, about 65% efficient.
+- Class AB - some of the conductor (collector) current flows in the inactive case, about 50% efficient.
+  * A practical Class AB amplifier requires two transistors - each conducting 180% degree of the input signal.
+  * Pre-biasing transistors forward using diodes and resistors: Vcc - R - D - D - R - G.
+- Class C - the conductor only amplifies 90 degrees (25%) of the input signal, about 90% efficient.
+  * Not suitable for audio applications, but useful for FM transmitter.
+
+Use a tank circuit (parallel resonant) to complete the missing cycle in an amplifier. (TODO: how?)
+
+Transistor configuration:
+
+- Common emitter - higher output impedance
+  * Collector: large V.
+  * Base: input signal.
+  * Emitter: grounded, with a parallel decoupling capacitor.
+  * Output: between collector (large V) and ground (0).
+- Common collector - lower output impedance
+  * Collector: large V (signal ground).
+  * Base: input signal.
+  * Emitter: grounded, with a serial capacitor.
+    - The emitter and base have identical signal voltage.
+  * Output: between emitter's serial capacitor and ground.
+- Common base - higher output impedance
+  * Input goes to emitter.
+  * Output comes from collector.
 
 ### Components
 
@@ -265,14 +293,68 @@ Amplifier classes:
 - Junction field effect transistors: magnify current from source to drain (N-channel) by a small increase of gate voltage.
 - Valves (vacuum tubes): heated cathode (conventional negative) to emit electrons toward anode (conventional positive), grid voltage controls the gain.
 
-Simple audio amplifier:
+Simple audio amplifier (common-emitter with higher output impedance):
 
 - Connect a single NPN diode across power supply.
 - Connect input to gate, through larger resistors.
   * Larger compared to the resisters on the collector's side.
-- Filter emitter through a low-pass filter (capacitor + resister in parallel).
+- Filter the output between collector and emitter through a low-pass filter (capacitor + resister in parallel).
 
 Simple radio frequency amplifier:
 
 - Use a junction field effect transistor.
   * And I barely if at all understand rest of the schematics.
+
+## Power and signal processing
+
+Ireland mains electricity supply:
+
+- 230VAC RMS - peek at 330V, peek-to-peek at 660V.
+- 50Hz at period of 20ms.
+
+The decibel scale of signal amplification:
+
+- 0dB - no gain, no loss.
+- -3dB - half.
+- 3dB - double.
+- 6dB - quadruple.
+- 10dB - 10 times.
+- 20dB - 100 times.
+
+The decibel scale of signal strength:
+
+- 10dBm - 10mW.
+- 20dBm - 100mW.
+- 30dBm - 1W.
+- 40dBm - 10W.
+
+Digital signal processing:
+
+- Analogue filter for the input.
+- Analogue to digital conversion.
+  * The sample rate needs to be at least 2x the highest signal frequency.
+- Digital processing logic.
+- Digital to analogue conversion.
+- Analogue filter for the output.
+
+To create an oscillator (sine wave generator):
+
+- Resonant (tuned) circuit acting as filter.
+- Amplify.
+- Feed back to the input.
+
+## ComReg license terms
+
+Link: https://www.comreg.ie/?dlm_download=amateur-station-licence-guidelines
+
+Key takeaways:
+
+- Keep ComReg updated with the license details.
+- The license lasts a lifetime.
+- There are two license classes: class 1 requires morse skills, class 2 does not.
+  * Class 1 call-signs are shorter ("EI9AB").
+- Repeaters are "automatic stations" and are only granted to club license holders.
+  * APRS relays are exempt.
+  * Repeater call-signs follow a strict convention - e.g. EI2TRR - 2m, Three Rock, voice.
+- Land base station - ID myself at the beginning, the end, and every 30 minutes.
+- Marine station - ID myself + position reporting every 30 minutes.

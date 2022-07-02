@@ -538,3 +538,467 @@ HF emergency frequencies:
 - 14300 kHz
 - 18160 kHz
 - 21360 kHz
+
+# Start over from the beginning
+
+Some time between May and July 2022 the sample example paper at https://www.irts.ie/dnloads/IRTS_Sample_Exam_Paper_2022.pdf changed to a new revision.
+
+Start over with "IRTS HAREC Sample Examination Paper v1.1.6".
+
+## A.1 Safety
+
+### 1. Fuse current for a 500W appliance
+
+My answer: A - 3Amps.
+
+Correct!
+
+### 2. Keep field strength within limits
+
+Keep in mind of the inverse square law.
+
+My answer: C - position the antenna so that affected people are in the far field.
+
+Correct!
+
+### 3. Hazardous voltage on a dipole
+
+A dipole antenna has high voltage at the poles and high current in the centre.
+
+My answer: A - ends of the dipole.
+
+Correct!
+
+### 4. Guy rope as mast support
+
+My answer: B - secured to the ground more than 60% of the mast's height away from the base.
+
+Correct!
+
+### 5. Reduce public RF exposure
+
+My answer: C - the design and location of the antenna.
+
+Correct!
+
+## A.2 Interference
+
+### 6. Transmitter interferes with a PC
+
+Sounds like improper equipment grounding or the presence of common mode current.
+
+This is probably unrelated to grounding as the Q does not mention hazardous voltage's presence on the equipment.
+
+My answer: D - fit a ferrite ring on computer's cables.
+
+Correct answer: C - use a low-pass filter.
+
+Actually, I don't understand the correct answer of this Q.
+
+### 7. Receiver intermodulation
+
+My answer: A - mixing of two frequencies somewhere in the receiver (that's the very definition of intermodulation).
+
+Correct!
+
+### 8. What's a band pass filter?
+
+My answer: C - passes signals between two frequencies
+
+Correct!
+
+### 9. Neighbour's audio system is causing interference
+
+My answer: B - put a ferrite ring on the audio system's speaker cables.
+
+Correct!
+
+## A.3 Radio theory
+
+### 10. Ohm's law applied to power calculation
+
+P = I^2 x R
+
+My answer: D - 500W
+
+Correct!
+
+### 11. What kind of circuit has current leading the voltage?
+
+Remember how I charged up the ultracapacitor?
+
+My answer: C - a capacitive circuit.
+
+Correct!
+
+### 12. Digital processing of signal in the time and frequency domains
+
+My answer: B - fast fourier transformation.
+
+Correct!
+
+### 13. SSB transmission characteristics
+
+My answer: D - upper side band.
+
+Correct!
+
+## A.4 Circuitry
+
+### 14. Identify circuit's purpose
+
+My answer: B - current is impeded at resonant frequency.
+
+Correct!
+
+### 15. Apply ohm's law
+
+27 + 33 = 60, total current over both resistors = 100mA.
+
+My answer: D - 100mA.
+
+Correct!
+
+### 16. Amplifier gain in dB
+
+Power doubles roughly every 3 dB. 7dB - 10W, 4dB - 5w, 1dB - 2.5w.
+
+My answer: C - 2W.
+
+Correct!
+
+### 17. SSB transmission characteristics
+
+My answer: D - uses about half the bandwidth of AM.
+
+Correct!
+
+### 18. Sensitivity of a receiver
+
+My answer: C - ability to receive weak signals.
+
+Correct!
+
+### 19. Identify components of an SSB transmitter
+
+My answer: B - balanced modulator.
+
+Correct!
+
+### 20. FM transmission characteristics
+
+My answer: B - twice of (peak deviation frequency + audio frequency).
+
+Correct!
+
+## A.6 Antennas
+
+### 21. Coax cable
+
+My answer: B - 50 ohm.
+
+Correct!
+
+### 22. Choose a cable for using in the vicinity of conductive objects
+
+My answer: D - coax.
+
+Correct!
+
+### 23. ERP of an antenna
+
+ERP is the effective radiating power.
+
+My answer: A - proportional to the antenna's gain.
+
+Correct!
+
+### 24. Purpose of an ATU
+
+My answer: B - match the impedance of transmission line to that of antenna.
+
+Correct!
+
+## A.7 Propagation
+
+### 25. Atmospheric absorption
+
+Remember the layers, from lowest to highest: D, E, F1, F2.
+
+My answer: B - the signal is absorbed by the D layer.
+
+Correct!
+
+### 26. Factor not contributing to skywave skip distance
+
+My answer: B - mode of the transmission.
+
+Correct!
+
+### 27. Ways of propagation on the 160m band
+
+My answer: A - ground wave.
+
+Correct!
+
+### 28. Critical VS usable frequency
+
+Keep in mind that, the maximum usable frequency is usually 3 x the critical frequency.
+
+My answer: A - the critical frequency.
+
+Correct!
+
+## A.8 Measurements
+
+### 29. Using an oscilloscope
+
+X - time, Y - amplitude.
+
+My answer: D - the signal voltage.
+
+Correct!
+
+### 30. RMS and peak voltage
+
+From highest to lowest: peek-to-peek, peek, RMS, average.
+
+My answer: C - 7.07V.
+
+Correct!
+
+## Section A summary
+
+29/30 = 96%
+
+## B.1 Phonetic alphabet
+
+### 31. Spell a callsign
+
+My answer: A - November Kilo 6 Golf Romeo
+
+Correct!
+
+## B.2 Q-codes
+
+### 32. Location and position in Q code
+
+Keep in mind: QRA - name, QRB - distance, QTH - location.
+
+My answer: D - QTH.
+
+Correct!
+
+### 33. What is QRZ?
+
+Keep in mind: QRZ - who's calling? QSL - please ack.
+
+My answer: B - who's calling?
+
+Correct!
+
+### 34. Q code for interference
+
+Keep in mind: QRM - interference, QRN - static, QSB - fading.
+
+My answer: D - QSB means fading.
+
+Correct!
+
+## B.3 Emergency communication
+
+### 35. Mayday
+
+My answer: C - Mayday
+
+Correct!
+
+### 36. Irish emergency communication centre of activity on the 80m band
+
+Can I possibly remember these frequencies? lol
+
+My answer: C - 3.630
+
+Correct answer: B
+
+### 37. Usage of emergency communication centre of activity frequencies
+
+My answer: C - permitted for use unless there's emergency communication in progres.
+
+Correct!
+
+## B.4 Call signs
+
+### 38. Prefix of Czechia
+
+My answer: C - OK.
+
+Correct!
+
+### 39. Off-shore Irish operation
+
+Keywords - offshore, island (land!).
+
+My answer: B - EJ3PA
+
+Correct!
+
+### 40. Find a valid callsign
+
+My answer: C - 2E6J
+
+Correct!
+
+## B.5 Band plans
+
+### 41. 160m voice segment
+
+Keep in mind: the 160m band spans between 1810 KHZ and 2000 KHZ.
+
+My answer: C - 1853 kHz.
+
+Correct!
+
+### 42. 80m band
+
+Keep in mind: the 80m band spans across 3.5 MHZ and 3.8 MHZ.
+
+My answer: B - CW.
+
+Correct!
+
+### 43. Secondary allocation
+
+Probably one of those WARC bands, including the newly allocated 60m band.
+
+My answer: A - 18.068 - 18.168.
+
+Correct answer: C - 50 MHZ - 52 MHZ.
+
+### 44. 40m band
+
+My answer: D - 7 MHZ - 7.3 MHZ
+
+Correct answer: B - 7MHZ - 7.2 MHZ
+
+## B.6 Code of conduct
+
+### 45. Congested DX
+
+My answer: D - wait for DX station to QRZ.
+
+Correct!
+
+### 46. Call CQ on a newly tuned frequency
+
+My answer: B - "Is this frequency in use, this is XXXXX. (wait and then) CQ from XXXXX."
+
+Correct!
+
+### 47. Identify transmission
+
+My answer: D - At the beginning and the end of the contact, and every 30 minutes.
+
+Correct answer: C - At the beginning and the end of the contact, and frequently at short intervals.
+
+## B.7 Operating procedure
+
+### 48. RS of 35
+
+Remember: readability, signal strength, and CW tone.
+
+My answer: D - readable with difficulty, 5 on the S metre.
+
+Correct!
+
+### 49. CQ to Japan only
+
+My answer: C - CQ DX Japan from EI9ABC.
+
+Correct answer: B - CQ Japan from EI8ABC.
+
+### 50. CQ DE EI9ABC AR in CW
+
+My answer: A - general call for a contact.
+
+Correct!
+
+### 51. Who takes care of international interference?
+
+My answer: B - ComReg.
+
+Correct answer: C - To IARU via IRTS liaison officer.
+
+### 52. Suffix QRP
+
+My answer: C - used for low power operation only.
+
+Correct answer: D - should not be used at all.
+
+## B.8 ITU regulations
+
+### 53. When is the communication between ham stations permitted when stations are in different countries?
+
+My answer: C - the two countries have to be IARU members.
+
+Correct answer: B - permitted by default unless there is unless countries explicitly object.
+
+## 54. ITU designation of J3E
+
+Remember: A - DSB, F - FM, J - SSB. 1 - Digital, 3 - Analogue. E - Voice.
+
+My answer: A - SSB speech.
+
+Correct!
+
+## B.9 CEPT regulations
+
+### 55. CEPT ham license holder privilege
+
+My answer: D - communicate with anyone on the ham radio frequencies.
+
+Correct answer: C - communicate with ham radio stations on ham radio frequencies. TODO FIXME: but what about in case of emergency?!
+
+### 56. Who is M/EI8XYZ?
+
+M is England.
+
+My answer: B - the holder of EI8XYZ, on a visit to England.
+
+Correct!
+
+### 57. Operating in another CEPT country using Irish license
+
+My answer: D - no duration restriction.
+
+Correct answer: A - between one and three months
+
+## B.10 Irish regulations
+
+### 58. Logbook content
+
+Remember: station ID, time and date, mode, power, frequency, my location (if not at base).
+
+My answer: A - power.
+
+Correct!
+
+### 59. Power restriction on the 4m band
+
+Remember: throughout most bands the restriction is 400w, with some notable exceptions such as the 6m and 4m bands.
+
+My answer: C - 50w
+
+Correct answer: D - 25w
+
+### 60. License terms
+
+Review https://www.comreg.ie/?dlm_download=amateur-station-licence-guidelines first - it's only 32 pages long.
+
+My answer: C - licenses once granted are in fact valid for life.
+
+Correct!
+
+## Section 2 summary
+
+20 / 30 = 66%
