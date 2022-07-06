@@ -823,7 +823,7 @@ Correct answer: B
 
 ### 37. Usage of emergency communication centre of activity frequencies
 
-My answer: C - permitted for use unless there's emergency communication in progres.
+My answer: C - permitted for use unless there's emergency communication in progress.
 
 Correct!
 

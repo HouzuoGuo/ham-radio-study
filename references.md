@@ -358,3 +358,37 @@ Key takeaways:
   * Repeater call-signs follow a strict convention - e.g. EI2TRR - 2m, Three Rock, voice.
 - Land base station - ID myself at the beginning, the end, and every 30 minutes.
 - Marine station - ID myself + position reporting every 30 minutes.
+
+## Memorise the band plan
+
+Special digits: 8, 2, 3, 7, 4-5-6.
+
+- 160m: 1810 - 2000
+- 80m: 3500 - 3800
+- 40m - 7000 - 7200
+- 20m - 14000 - 14350
+  * 15m - 21000 - 21450
+- 10m - 28000 - 29700
+- 6m - 50000 - 54000
+- 4m - 70000 - 70500
+- 2m - 144000 - 146000
+- 70cm - 432000 - 440000
+
+## Memorise the power limit
+
+General rules:
+
+- General power limit: 400 watts.
+  * Special - mobile: 50w
+  * Special - marine: 10w.
+- Special - 160m: first 40khz 400w, next 10w.
+- 80m: 400w
+- 40m: 400w
+- 20m: 400w
+  * 15m: 400w
+- 10m: 400w
+- Special - 6m (secondary allocation): first 2mhz 100w, next 50w.
+- 4m (secondary allocation): 50w
+  * Special - mobile: 25w
+- 2m: 400w
+- 70cm: 400w
